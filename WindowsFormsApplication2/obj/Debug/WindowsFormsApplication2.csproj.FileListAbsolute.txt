@@ -12,3 +12,14 @@ C:\Users\Marcos\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\W
 C:\Users\Marcos\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\ICMS_PIS_COFFINS.FRM_ImportarSped.resources
 C:\Users\Marcos\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\ICMS_PIS_COFFINS.Principal.resources
 C:\Users\Marcos\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.view.FRM_PesquisarCadastro.resources
+C:\Users\Marcos\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Microsoft.Data.Schema.Sql.dll
+C:\Users\Marcos\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Microsoft.Data.Schema.dll
+C:\Users\Marcos\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Microsoft.Data.Schema.Utilities.dll
+C:\Users\Marcos\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Microsoft.Data.Schema.ScriptDom.Sql.dll
+C:\Users\Marcos\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Microsoft.Data.Schema.ScriptDom.dll
+C:\Users\Marcos\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Marcos\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Microsoft.Data.Schema.Sql.xml
+C:\Users\Marcos\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Microsoft.Data.Schema.xml
+C:\Users\Marcos\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Microsoft.Data.Schema.ScriptDom.Sql.xml
+C:\Users\Marcos\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Microsoft.Data.Schema.ScriptDom.xml
+C:\Users\Marcos\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\PT\System.Data.SqlServerCe.resources.dll

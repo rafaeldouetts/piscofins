@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Cadastro));
             this.LBL_Codigo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,8 +64,6 @@
             this.CBB_Nfe = new System.Windows.Forms.ComboBox();
             this.LBL_TipoLucro = new System.Windows.Forms.Label();
             this.CBB_TipoLucro = new System.Windows.Forms.ComboBox();
-            this.LBL_Icms = new System.Windows.Forms.Label();
-            this.CBB_Icms = new System.Windows.Forms.ComboBox();
             this.TXT_Cep = new System.Windows.Forms.TextBox();
             this.LBL_Banco = new System.Windows.Forms.Label();
             this.TXT_NomeBanco = new System.Windows.Forms.TextBox();
@@ -78,6 +77,12 @@
             this.BTN_Pesquisar = new System.Windows.Forms.Button();
             this.BTN_Novo = new System.Windows.Forms.Button();
             this.CBB_TabelaBanco = new System.Windows.Forms.ComboBox();
+            this.cfopBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DTG_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DTG_Saida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.cfopBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // LBL_Codigo
@@ -101,13 +106,16 @@
             // 
             // TXT_Codigo
             // 
+            this.TXT_Codigo.Enabled = false;
             this.TXT_Codigo.Location = new System.Drawing.Point(13, 86);
             this.TXT_Codigo.Name = "TXT_Codigo";
             this.TXT_Codigo.Size = new System.Drawing.Size(55, 20);
             this.TXT_Codigo.TabIndex = 3;
+            this.TXT_Codigo.TextChanged += new System.EventHandler(this.TXT_Codigo_TextChanged);
             // 
             // TXT_NomeFantasia
             // 
+            this.TXT_NomeFantasia.Enabled = false;
             this.TXT_NomeFantasia.Location = new System.Drawing.Point(102, 86);
             this.TXT_NomeFantasia.Name = "TXT_NomeFantasia";
             this.TXT_NomeFantasia.Size = new System.Drawing.Size(172, 20);
@@ -125,6 +133,7 @@
             // 
             // TXT_RazaoSocial
             // 
+            this.TXT_RazaoSocial.Enabled = false;
             this.TXT_RazaoSocial.Location = new System.Drawing.Point(301, 86);
             this.TXT_RazaoSocial.Name = "TXT_RazaoSocial";
             this.TXT_RazaoSocial.Size = new System.Drawing.Size(201, 20);
@@ -234,6 +243,7 @@
             // 
             // TXT_CNPJ
             // 
+            this.TXT_CNPJ.Enabled = false;
             this.TXT_CNPJ.Location = new System.Drawing.Point(10, 141);
             this.TXT_CNPJ.Name = "TXT_CNPJ";
             this.TXT_CNPJ.Size = new System.Drawing.Size(154, 20);
@@ -241,6 +251,7 @@
             // 
             // TXT_InscricaoEstadual
             // 
+            this.TXT_InscricaoEstadual.Enabled = false;
             this.TXT_InscricaoEstadual.Location = new System.Drawing.Point(301, 141);
             this.TXT_InscricaoEstadual.Name = "TXT_InscricaoEstadual";
             this.TXT_InscricaoEstadual.Size = new System.Drawing.Size(201, 20);
@@ -248,6 +259,7 @@
             // 
             // TXT_InscricaoMunicipal
             // 
+            this.TXT_InscricaoMunicipal.Enabled = false;
             this.TXT_InscricaoMunicipal.Location = new System.Drawing.Point(10, 201);
             this.TXT_InscricaoMunicipal.Name = "TXT_InscricaoMunicipal";
             this.TXT_InscricaoMunicipal.Size = new System.Drawing.Size(154, 20);
@@ -255,6 +267,7 @@
             // 
             // TXT_Endereco
             // 
+            this.TXT_Endereco.Enabled = false;
             this.TXT_Endereco.Location = new System.Drawing.Point(10, 266);
             this.TXT_Endereco.Name = "TXT_Endereco";
             this.TXT_Endereco.Size = new System.Drawing.Size(154, 20);
@@ -262,6 +275,7 @@
             // 
             // TXT_Numero
             // 
+            this.TXT_Numero.Enabled = false;
             this.TXT_Numero.Location = new System.Drawing.Point(186, 265);
             this.TXT_Numero.Name = "TXT_Numero";
             this.TXT_Numero.Size = new System.Drawing.Size(37, 20);
@@ -269,6 +283,7 @@
             // 
             // TXT_Cnae
             // 
+            this.TXT_Cnae.Enabled = false;
             this.TXT_Cnae.Location = new System.Drawing.Point(301, 265);
             this.TXT_Cnae.Name = "TXT_Cnae";
             this.TXT_Cnae.Size = new System.Drawing.Size(201, 20);
@@ -277,6 +292,7 @@
             // 
             // TXT_Email
             // 
+            this.TXT_Email.Enabled = false;
             this.TXT_Email.Location = new System.Drawing.Point(513, 265);
             this.TXT_Email.Name = "TXT_Email";
             this.TXT_Email.Size = new System.Drawing.Size(198, 20);
@@ -284,6 +300,7 @@
             // 
             // TXT_Bairro
             // 
+            this.TXT_Bairro.Enabled = false;
             this.TXT_Bairro.Location = new System.Drawing.Point(10, 325);
             this.TXT_Bairro.Name = "TXT_Bairro";
             this.TXT_Bairro.Size = new System.Drawing.Size(154, 20);
@@ -291,6 +308,7 @@
             // 
             // TXT_Cidade
             // 
+            this.TXT_Cidade.Enabled = false;
             this.TXT_Cidade.Location = new System.Drawing.Point(186, 324);
             this.TXT_Cidade.Name = "TXT_Cidade";
             this.TXT_Cidade.Size = new System.Drawing.Size(100, 20);
@@ -298,6 +316,7 @@
             // 
             // TXT_Site
             // 
+            this.TXT_Site.Enabled = false;
             this.TXT_Site.Location = new System.Drawing.Point(301, 323);
             this.TXT_Site.Name = "TXT_Site";
             this.TXT_Site.Size = new System.Drawing.Size(201, 20);
@@ -314,11 +333,14 @@
             // 
             // CBB_Estado
             // 
+            this.CBB_Estado.DisplayMember = "nome";
+            this.CBB_Estado.Enabled = false;
             this.CBB_Estado.FormattingEnabled = true;
             this.CBB_Estado.Location = new System.Drawing.Point(10, 368);
             this.CBB_Estado.Name = "CBB_Estado";
             this.CBB_Estado.Size = new System.Drawing.Size(154, 21);
             this.CBB_Estado.TabIndex = 28;
+            this.CBB_Estado.ValueMember = "nome";
             // 
             // LBL_Cep
             // 
@@ -340,6 +362,7 @@
             // 
             // CBB_Nfe
             // 
+            this.CBB_Nfe.Enabled = false;
             this.CBB_Nfe.FormattingEnabled = true;
             this.CBB_Nfe.Location = new System.Drawing.Point(301, 367);
             this.CBB_Nfe.Name = "CBB_Nfe";
@@ -357,31 +380,16 @@
             // 
             // CBB_TipoLucro
             // 
+            this.CBB_TipoLucro.Enabled = false;
             this.CBB_TipoLucro.FormattingEnabled = true;
             this.CBB_TipoLucro.Location = new System.Drawing.Point(513, 367);
             this.CBB_TipoLucro.Name = "CBB_TipoLucro";
             this.CBB_TipoLucro.Size = new System.Drawing.Size(198, 21);
             this.CBB_TipoLucro.TabIndex = 33;
             // 
-            // LBL_Icms
-            // 
-            this.LBL_Icms.AutoSize = true;
-            this.LBL_Icms.Location = new System.Drawing.Point(16, 409);
-            this.LBL_Icms.Name = "LBL_Icms";
-            this.LBL_Icms.Size = new System.Drawing.Size(33, 13);
-            this.LBL_Icms.TabIndex = 34;
-            this.LBL_Icms.Text = "ICMS";
-            // 
-            // CBB_Icms
-            // 
-            this.CBB_Icms.FormattingEnabled = true;
-            this.CBB_Icms.Location = new System.Drawing.Point(10, 425);
-            this.CBB_Icms.Name = "CBB_Icms";
-            this.CBB_Icms.Size = new System.Drawing.Size(154, 21);
-            this.CBB_Icms.TabIndex = 35;
-            // 
             // TXT_Cep
             // 
+            this.TXT_Cep.Enabled = false;
             this.TXT_Cep.Location = new System.Drawing.Point(186, 368);
             this.TXT_Cep.Name = "TXT_Cep";
             this.TXT_Cep.Size = new System.Drawing.Size(100, 20);
@@ -418,9 +426,10 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(10, 518);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 13);
+            this.label4.Size = new System.Drawing.Size(100, 13);
             this.label4.TabIndex = 41;
-            this.label4.Text = "Selecionar CFOP\'S Venda";
+            this.label4.Text = "Selecionar CFOP\'S ";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -448,6 +457,7 @@
             this.BTN_Salvar.Size = new System.Drawing.Size(33, 28);
             this.BTN_Salvar.TabIndex = 44;
             this.BTN_Salvar.UseVisualStyleBackColor = true;
+            this.BTN_Salvar.Click += new System.EventHandler(this.BTN_Salvar_Click);
             // 
             // BTN_Editar
             // 
@@ -459,6 +469,7 @@
             this.BTN_Editar.Size = new System.Drawing.Size(33, 28);
             this.BTN_Editar.TabIndex = 45;
             this.BTN_Editar.UseVisualStyleBackColor = true;
+            this.BTN_Editar.Click += new System.EventHandler(this.BTN_Editar_Click);
             // 
             // BTN_Excluir
             // 
@@ -508,11 +519,35 @@
             this.CBB_TabelaBanco.Size = new System.Drawing.Size(198, 21);
             this.CBB_TabelaBanco.TabIndex = 49;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DTG_entrada,
+            this.DTG_Saida});
+            this.dataGridView1.Location = new System.Drawing.Point(10, 534);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(534, 534);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(251, 140);
+            this.dataGridView1.TabIndex = 50;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // DTG_entrada
+            // 
+            this.DTG_entrada.HeaderText = "Entrada";
+            this.DTG_entrada.Name = "DTG_entrada";
+            // 
+            // DTG_Saida
+            // 
+            this.DTG_Saida.HeaderText = "Saida";
+            this.DTG_Saida.Name = "DTG_Saida";
+            // 
             // FRM_Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 626);
+            this.ClientSize = new System.Drawing.Size(963, 704);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.CBB_TabelaBanco);
             this.Controls.Add(this.BTN_Novo);
             this.Controls.Add(this.BTN_Pesquisar);
@@ -526,8 +561,6 @@
             this.Controls.Add(this.TXT_NomeBanco);
             this.Controls.Add(this.LBL_Banco);
             this.Controls.Add(this.TXT_Cep);
-            this.Controls.Add(this.CBB_Icms);
-            this.Controls.Add(this.LBL_Icms);
             this.Controls.Add(this.CBB_TipoLucro);
             this.Controls.Add(this.LBL_TipoLucro);
             this.Controls.Add(this.CBB_Nfe);
@@ -566,6 +599,8 @@
             this.Name = "FRM_Cadastro";
             this.Text = "cadastro";
             this.Load += new System.EventHandler(this.FRM_Cadastro_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cfopBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -575,7 +610,6 @@
 
         private System.Windows.Forms.Label LBL_Codigo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TXT_Codigo;
         private System.Windows.Forms.TextBox TXT_NomeFantasia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TXT_RazaoSocial;
@@ -591,7 +625,7 @@
         private System.Windows.Forms.Label LBL_Cidade;
         private System.Windows.Forms.Label LBL_Site;
         private System.Windows.Forms.TextBox TXT_CNPJ;
-        private System.Windows.Forms.TextBox TXT_InscricaoEstadual;
+        public System.Windows.Forms.TextBox TXT_InscricaoEstadual;
         private System.Windows.Forms.TextBox TXT_InscricaoMunicipal;
         private System.Windows.Forms.TextBox TXT_Endereco;
         private System.Windows.Forms.TextBox TXT_Numero;
@@ -607,8 +641,6 @@
         private System.Windows.Forms.ComboBox CBB_Nfe;
         private System.Windows.Forms.Label LBL_TipoLucro;
         private System.Windows.Forms.ComboBox CBB_TipoLucro;
-        private System.Windows.Forms.Label LBL_Icms;
-        private System.Windows.Forms.ComboBox CBB_Icms;
         private System.Windows.Forms.TextBox TXT_Cep;
         private System.Windows.Forms.Label LBL_Banco;
         private System.Windows.Forms.TextBox TXT_NomeBanco;
@@ -622,5 +654,10 @@
         private System.Windows.Forms.Button BTN_Pesquisar;
         private System.Windows.Forms.Button BTN_Novo;
         private System.Windows.Forms.ComboBox CBB_TabelaBanco;
+        public System.Windows.Forms.TextBox TXT_Codigo;
+        private System.Windows.Forms.BindingSource cfopBindingSource;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DTG_entrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DTG_Saida;
     }
 }
