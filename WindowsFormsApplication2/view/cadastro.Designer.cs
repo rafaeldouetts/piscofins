@@ -78,11 +78,11 @@
             this.BTN_Novo = new System.Windows.Forms.Button();
             this.CBB_TabelaBanco = new System.Windows.Forms.ComboBox();
             this.cfopBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DTG_Cfop = new System.Windows.Forms.DataGridView();
             this.DTG_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DTG_Saida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cfopBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DTG_Cfop)).BeginInit();
             this.SuspendLayout();
             // 
             // LBL_Codigo
@@ -519,18 +519,18 @@
             this.CBB_TabelaBanco.Size = new System.Drawing.Size(198, 21);
             this.CBB_TabelaBanco.TabIndex = 49;
             // 
-            // dataGridView1
+            // DTG_Cfop
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DTG_Cfop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DTG_Cfop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DTG_entrada,
             this.DTG_Saida});
-            this.dataGridView1.Location = new System.Drawing.Point(10, 534);
-            this.dataGridView1.MaximumSize = new System.Drawing.Size(534, 534);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(251, 140);
-            this.dataGridView1.TabIndex = 50;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.DTG_Cfop.Location = new System.Drawing.Point(10, 534);
+            this.DTG_Cfop.MaximumSize = new System.Drawing.Size(534, 534);
+            this.DTG_Cfop.Name = "DTG_Cfop";
+            this.DTG_Cfop.Size = new System.Drawing.Size(251, 140);
+            this.DTG_Cfop.TabIndex = 50;
+            this.DTG_Cfop.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // DTG_entrada
             // 
@@ -547,7 +547,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 704);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DTG_Cfop);
             this.Controls.Add(this.CBB_TabelaBanco);
             this.Controls.Add(this.BTN_Novo);
             this.Controls.Add(this.BTN_Pesquisar);
@@ -600,7 +600,7 @@
             this.Text = "cadastro";
             this.Load += new System.EventHandler(this.FRM_Cadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cfopBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DTG_Cfop)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -656,8 +656,10 @@
         private System.Windows.Forms.ComboBox CBB_TabelaBanco;
         public System.Windows.Forms.TextBox TXT_Codigo;
         private System.Windows.Forms.BindingSource cfopBindingSource;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DTG_Cfop;
         private System.Windows.Forms.DataGridViewTextBoxColumn DTG_entrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn DTG_Saida;
+ 
     }
+    
 }

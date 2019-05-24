@@ -25,6 +25,8 @@ namespace WindowsFormsApplication2.controler
         static string _cep = "";
         static string _nfe = "";
         static string _tipolucro = "";
+        static int  _cfop = 0;
+        static int i, x = 0; 
 
 
 
@@ -112,11 +114,28 @@ namespace WindowsFormsApplication2.controler
             set { _nfe = value; }
 
         }
+        
         public static string TipoLucro
         {
             get { return _tipolucro; }
             set { _tipolucro = value; }
 
         }
+        public static int contador
+        {
+            get { return i; }
+            set { i = value; }
+        }
+        public static int ListaCfop
+        {
+
+            get { return _cfop; } 
+            set { _cfop = value; }
+                    
+                    }
+        }
+
+
+
     }
-}
+

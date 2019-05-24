@@ -39,21 +39,23 @@
             this.RBN_Codigo = new System.Windows.Forms.RadioButton();
             this.RBN_Nome = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.testeDataSet = new WindowsFormsApplication2.testeDataSet();
-            this.testeDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testeDataSet1 = new WindowsFormsApplication2.testeDataSet1();
-            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.empresasTableAdapter = new WindowsFormsApplication2.testeDataSet1TableAdapters.EmpresasTableAdapter();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeFantasiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empresasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.testeDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testeDataSet = new WindowsFormsApplication2.testeDataSet();
+            this.testeDataSet1 = new WindowsFormsApplication2.testeDataSet1();
+            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empresasTableAdapter = new WindowsFormsApplication2.testeDataSet1TableAdapters.EmpresasTableAdapter();
             this.empresasTableAdapter1 = new WindowsFormsApplication2.testeDataSetTableAdapters.EmpresasTableAdapter();
+            this.testeDataSet2 = new WindowsFormsApplication2.testeDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testeDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testeDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testeDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // LBL_Informacao
@@ -147,30 +149,6 @@
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // testeDataSet
-            // 
-            this.testeDataSet.DataSetName = "testeDataSet";
-            this.testeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // testeDataSetBindingSource
-            // 
-            this.testeDataSetBindingSource.DataSource = this.testeDataSet;
-            this.testeDataSetBindingSource.Position = 0;
-            // 
-            // testeDataSet1
-            // 
-            this.testeDataSet1.DataSetName = "testeDataSet1";
-            this.testeDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // empresasBindingSource
-            // 
-            this.empresasBindingSource.DataMember = "Empresas";
-            this.empresasBindingSource.DataSource = this.testeDataSet1;
-            // 
-            // empresasTableAdapter
-            // 
-            this.empresasTableAdapter.ClearBeforeFill = true;
-            // 
             // codigoDataGridViewTextBoxColumn
             // 
             this.codigoDataGridViewTextBoxColumn.DataPropertyName = "codigo";
@@ -189,9 +167,38 @@
             this.empresasBindingSource1.DataMember = "Empresas";
             this.empresasBindingSource1.DataSource = this.testeDataSetBindingSource;
             // 
+            // testeDataSetBindingSource
+            // 
+            this.testeDataSetBindingSource.DataSource = this.testeDataSet;
+            this.testeDataSetBindingSource.Position = 0;
+            // 
+            // testeDataSet
+            // 
+            this.testeDataSet.DataSetName = "testeDataSet";
+            this.testeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // testeDataSet1
+            // 
+            this.testeDataSet1.DataSetName = "testeDataSet1";
+            this.testeDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // empresasBindingSource
+            // 
+            this.empresasBindingSource.DataMember = "Empresas";
+            this.empresasBindingSource.DataSource = this.testeDataSet1;
+            // 
+            // empresasTableAdapter
+            // 
+            this.empresasTableAdapter.ClearBeforeFill = true;
+            // 
             // empresasTableAdapter1
             // 
             this.empresasTableAdapter1.ClearBeforeFill = true;
+            // 
+            // testeDataSet2
+            // 
+            this.testeDataSet2.DataSetName = "testeDataSet";
+            this.testeDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // FRM_PesquisarCadastro
             // 
@@ -212,11 +219,12 @@
             this.Text = "PesquisarCadastro";
             this.Load += new System.EventHandler(this.FRM_PesquisarCadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testeDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testeDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testeDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +250,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeFantasiaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource empresasBindingSource1;
         private testeDataSetTableAdapters.EmpresasTableAdapter empresasTableAdapter1;
+        private testeDataSet testeDataSet2;
     }
 }

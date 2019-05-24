@@ -22,7 +22,7 @@ namespace WindowsFormsApplication2.view
             InitializeComponent();
         }
         public int Getcodigo { get; set; }
-
+ 
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -116,7 +116,7 @@ namespace WindowsFormsApplication2.view
             this.empresasTableAdapter1.Fill(this.testeDataSet.Empresas);
             // TODO: This line of code loads data into the 'testeDataSet1.Empresas' table. You can move, or remove it, as needed.
             this.empresasTableAdapter.Fill(this.testeDataSet1.Empresas);
-
+          
 
         }
 
@@ -129,28 +129,28 @@ namespace WindowsFormsApplication2.view
             SqlConnection conn = new SqlConnection(@"Data Source=RAFAEL-PC;Initial Catalog=teste;Integrated Security=True");
             try
             {
-                // cria o comando sql
-                SqlCommand comando = new SqlCommand("P_PesquisarEmpresa", conn);
+                    // cria o comando sql
+                SqlCommand comando = new SqlCommand("P_PesquisarEmpresa", conn);    
                 // abre a conexao
-                conn.Open();
+                    conn.Open();
                 comando.Parameters.Clear();
-                //prepara a query
-                comando.Parameters.AddWithValue("@P_Codigo", Codigo);
-
-                comando.CommandType = CommandType.StoredProcedure;
+                    //prepara a query
+                    comando.Parameters.AddWithValue("@P_Codigo",Codigo);
+                  
+                    comando.CommandType = CommandType.StoredProcedure;
 
                 // recebe os parametros da query 
                 SqlDataReader reader;
                 reader = comando.ExecuteReader();
                 reader.Read();
                 string _nomeFantasia = reader.GetString(1);
-                string _razaosocial = reader.GetString(2);
+               string _razaosocial = reader.GetString(2);
                 string _cnpj = reader.GetString(3);
                 string _inscricaoestadual = reader.GetString(4);
                 string _inscricaomunicipal = reader.GetString(5);
                 string _endereco = reader.GetString(6);
                 string _numero = reader.GetString(7);
-                string _cnae = reader.GetString(8);
+                string _cnae  = reader.GetString(8);
                 string _email = reader.GetString(9);
                 string _bairro = reader.GetString(10);
                 string _cidade = reader.GetString(11);
@@ -181,46 +181,45 @@ namespace WindowsFormsApplication2.view
                 // teste 
                 conn.Open();
                 comando.Parameters.Clear();
-                comando = new SqlCommand("Pesquisar_Cfop", conn);
+                comando = new SqlCommand ("Pesquisar_Cfop", conn);
                 comando.Parameters.AddWithValue("@P_Codigo", Codigo);
 
                 comando.CommandType = CommandType.StoredProcedure;
                 reader = comando.ExecuteReader();
                 reader.Read();
-                DataTable schemaTable = reader.GetSchemaTable();
-
-                foreach (DataRow row in schemaTable.Rows)
+                // int teste = Convert.ToInt32(reader.GetString(0));
+                // p.ListaCfop = teste;
+                while (reader.Read())
                 {
-                    foreach (DataColumn column in schemaTable.Columns)
-                    {
-                        Console.WriteLine(String.Format("{0} = {1}",
-                           column.ColumnName, row[column]));
-                    }
+                    int i=0;
+                    p.ListaCfop = Convert.ToInt32(reader.GetString(i));
+                    i++;
                 }
-         
-
-                        this.Close();
-                        FRM_Cadastro novaform = new FRM_Cadastro();
-                        novaform.Show();
-                        // separando os campos de retorno da query
 
 
-                        // fecha a conexao 
-                        conn.Close();
+               
+                
+                this.Close();
+                FRM_Cadastro novaform = new FRM_Cadastro();
+                novaform.Show();
+                // separando os campos de retorno da query
+
+
+                // fecha a conexao 
+                conn.Close(); 
             }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
             }
+
+
         }
-
-
 
         private void BTN_Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
     }
-}
-    
+    }
 

@@ -148,7 +148,10 @@ namespace ICMS_PIS_COFFINS
             TXT_Cep.Text = p.Cep;
             CBB_Nfe.Text = p.Nfe;
             CBB_TipoLucro.Text = p.TipoLucro;
-
+            if (p.ListaCfop != 0)
+            {
+                DTG_Cfop.Rows[0].Cells[0].Value = p.ListaCfop;
+            }
         }
         private void textBox9_TextChanged(object sender, EventArgs e)
         {
@@ -322,32 +325,7 @@ namespace ICMS_PIS_COFFINS
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
-            String strConexao = "Data Source=RAFAEL-PC;Initial Catalog=teste;Integrated Security=True";
-            Conexao conexao = new Conexao(strConexao);
-            SqlConnection conn = new SqlConnection(@"Data Source=RAFAEL-PC;Initial Catalog=teste;Integrated Security=True");
-            try
-            {
-                // cria o comando sql
-                SqlCommand comando = new SqlCommand("P_PesquisarCfop", conn);
-                // abre a conexao
-                conn.Open();
-                comando.Parameters.Clear();
-                //prepara a query
-                comando.Parameters.Add("@P_Codigo", p.Codigo);
-
-                comando.CommandType = CommandType.StoredProcedure;
-
-                // recebe os parametros da query 
-                SqlDataReader reader;
-                reader = comando.ExecuteReader();
-                reader.Read();
-                string _cfop = reader.GetString(1);
-
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.Message);
-            }
+          
         }
 
     }
