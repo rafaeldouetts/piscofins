@@ -61,6 +61,7 @@ namespace ICMS_PIS_COFFINS
                         string liquota = "";
                         string operacao = "";
                         string situacao = "";
+                        string ICMS = "";
                         //string p_query_CNPJ = "";
                         string inicio = "0000";
                         int tamanhoString = 0;
@@ -76,27 +77,32 @@ namespace ICMS_PIS_COFFINS
                             {
 
                                 // enquanto a linha nao terminar passa pro proximo caracter
-                                for (y = 0; contador < 8; y++)
+                                for (y = 0; contador < 9; y++)
                                 {
                                     //contador de barras 
                                     if (linha[y].ToString() == "|")
                                     {
                                         contador += 1;
                                     }
-                                    // na primeira passada coloca as aspas duplas 
-                                    if (contador == 1 && y == 0)
+                                    // quando encontrar o campo do registro do CFOP e do ICMS separa o valor 
+
+                                    if (contador == 1)
                                     {
+                                        if (linha[y].ToString() == "|")
+                                        {
 
-                                        p_query += "";
-                                        y += 1;
-
+                                        }
+                                        else {
+                                            // se nao pega o caracter e adiciona na query
+                                            p_query_registro += linha.Substring(y, 1);
+                                        }
                                     }
                                     // pegar a situacao 
                                     if (contador == 2)
                                     {
                                         if (linha[y].ToString() == "|")
                                         {
-                                            //p_query_CFOP += "', '";
+                                            
                                         }
                                         else {
                                             // se nao pega o caracter e adiciona na query
@@ -107,7 +113,7 @@ namespace ICMS_PIS_COFFINS
                                     {
                                         if (linha[y].ToString() == "|")
                                         {
-                                            //p_query_CFOP += "', '";
+                                           
                                         }
                                         else {
                                             // se nao pega o caracter e adiciona na query
@@ -125,6 +131,18 @@ namespace ICMS_PIS_COFFINS
                                             liquota += linha.Substring(y, 1);
                                         }
                                     }
+                                    if (contador == 8)
+                                    {
+                                        if (linha[y].ToString() == "|")
+                                        {
+
+                                        }
+                                        else {
+                                            // se nao pega o caracter e adiciona na query
+                                            ICMS += linha.Substring(y, 1);
+
+                                        }
+                                    }
 
                                     tamanhoString++;
 
@@ -133,25 +151,13 @@ namespace ICMS_PIS_COFFINS
                                         p_query += "'";
                                         contador++;
                                     }
-                                    // quando encontrar o campo do registro do CFOP e do ICMS separa o valor 
+                                   
 
-                                    if (contador == 1)
+                                    if (contador == 9)
                                     {
                                         if (linha[y].ToString() == "|")
                                         {
-                                            //  p_query_registro += "', '";
-                                        }
-                                        else {
-                                            // se nao pega o caracter e adiciona na query
-                                            p_query_registro += linha.Substring(y, 1);
-                                        }
-                                    }
-
-                                    if (contador == 7)
-                                    {
-                                        if (linha[y].ToString() == "|")
-                                        {
-                                            //  p_query_V_ICMS += "', '";
+                                          
                                         }
                                         else {
                                             // se nao pega o caracter e adiciona na query
@@ -186,7 +192,7 @@ namespace ICMS_PIS_COFFINS
 
 
 
-                            /*pegar cnpj 
+                            //pegar cnpj 
 
                                 if (linha.Substring(1, 4) == inicio)
                                 {
@@ -210,7 +216,7 @@ namespace ICMS_PIS_COFFINS
                                         }
                                     }
 
-                                }*/
+                                }
 
 
 
@@ -222,9 +228,33 @@ namespace ICMS_PIS_COFFINS
                         SqlConnection conn = new SqlConnection(@"Data Source=RAFAEL-PC;Initial Catalog=teste;Integrated Security=True");
                         try
                         {
-                            if (p_query_CFOP != "" && p_query_V_ICMS != "" && liquota != "0")
+                            if (p_query_CFOP != "" && ICMS != "" && liquota != "0" && situacao !="060")
                             {
                                 // pega a data do arquivo 
+                                string p_query_data = NomeArquivo.Substring(28, 8);
+
+                                //prepara o valor do icms pro banco 
+                                decimal valor = Convert.ToDecimal(ICMS);
+                                // cria o comando sql
+                                SqlCommand comando = new SqlCommand("P_InsertSped", conn);
+                                // abre a conexao
+                                conn.Open();
+                                //prepara a query
+                                comando.Parameters.AddWithValue("@Registro", p_query_registro);
+                                comando.Parameters.AddWithValue("@Cfop", p_query_CFOP);
+                                comando.Parameters.AddWithValue("@CNPJ", p_query_CNPJ);
+                                comando.Parameters.AddWithValue("@operacao", operacao);
+                                comando.Parameters.AddWithValue("@V_ICMS", valor);
+                                comando.Parameters.AddWithValue("@Data", p_query_data);
+                                comando.CommandType = CommandType.StoredProcedure;
+                                // executa a query
+                                comando.ExecuteNonQuery();
+                                // fecha a conexao 
+                                conn.Close();
+                                
+
+                            }
+                            if (p_query_CFOP != "" && p_query_V_ICMS != "" && liquota != "0" && situacao == "060")  {
                                 string p_query_data = NomeArquivo.Substring(28, 8);
 
                                 //prepara o valor do icms pro banco 
@@ -245,10 +275,11 @@ namespace ICMS_PIS_COFFINS
                                 comando.ExecuteNonQuery();
                                 // fecha a conexao 
                                 conn.Close();
-                                linha = leitor.ReadLine();
-
+                              
                             }
-
+                            else {
+                                linha = leitor.ReadLine();
+                            }
 
 
                         }
