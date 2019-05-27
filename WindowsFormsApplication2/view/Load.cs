@@ -29,32 +29,9 @@ namespace ICMS_PIS_COFFINS
 
         private void button1_Click(object sender, EventArgs e)
         { 
-            String strConexao = "Data Source=RAFAEL-PC;Initial Catalog=teste;Integrated Security=True";
-        Conexao conexao = new Conexao(strConexao);
-        SqlConnection conn = new SqlConnection(@"Data Source=RAFAEL-PC;Initial Catalog=teste;Integrated Security=True");
-            try
-            {
-                    // cria o comando sql
-                SqlCommand comando = new SqlCommand("P_PesquisarUsuario", conn);
-        // abre a conexao
-        conn.Open();
-                comando.Parameters.Clear();
-                    //prepara a query
-                    comando.Parameters.AddWithValue("@P_Nome",TXT_Usuario.Text);
-                comando.Parameters.AddWithValue("@P_Senha", TXT_Senha.Text);
-                    comando.CommandType = CommandType.StoredProcedure;
-
-                SqlDataReader reader;
-                reader= comando.ExecuteReader();
-                reader.Read();
-
-                try
-                {
-                    string nome = reader.GetString(0);
 
 
-
-                    if (nome != null) {
+                    if (TXT_Usuario.Text=="admin" && TXT_Senha.Text=="satelite") {
 
                         int i = 0;
                         PRG_Login.Minimum = 0;
@@ -69,20 +46,8 @@ namespace ICMS_PIS_COFFINS
                         novaform.Show();
                         this.Hide();
                     }
-                }
-                catch (Exception erro )
-                {
-                    MessageBox.Show(erro.Message);
-                }
-
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.Message);
-            }
-            
-            
-            
+           
+       
             
             /* verificando login
         { if (TXT_Usuario.Text == "admin" && TXT_Senha.Text == "satelite")
